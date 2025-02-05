@@ -27,6 +27,7 @@ public class Services
         user.Password = Password;
         user.UserRole = 1;
         
+        if(user != null && !_context.Users.Any(u => u.Login == Login))
         _context.Users.Add(user);
         _context.SaveChanges();
     }

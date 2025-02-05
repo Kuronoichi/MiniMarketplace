@@ -5,8 +5,36 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:Pitpmlab4"
         mc:Ignorable="d"
-        Title="UserWindow" Height="450" Width="800">
+        Title="UserWindow" Height="450" Width="800" IsVisibleChanged="UserWindow_OnIsVisibleChanged" Closed="UserWindow_OnClosed">
     <Grid>
-        
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+            <ItemsControl x:Name="ProductCard">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border CornerRadius="5"
+                                BorderBrush="Black"
+                                BorderThickness="2"
+                                VerticalAlignment="Top"
+                                Padding="10" Margin="10">
+                            <StackPanel>
+                                <Image Source="{Binding ImagePath}"
+                                       Width="150"
+                                       Height="150"
+                                       Stretch="Fill"/>
+                                <Label FontSize="20" Content="{Binding Name}"/>
+                                <Label FontSize="15" Content="{Binding Cost}"/>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+                
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+
+            </ItemsControl>
+        </ScrollViewer>
     </Grid>
 </Window>

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Pitpmlab4")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+df971031d551d8cc4c5c67f1309c3216e0e0896f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Pitpmlab4")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Pitpmlab4")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

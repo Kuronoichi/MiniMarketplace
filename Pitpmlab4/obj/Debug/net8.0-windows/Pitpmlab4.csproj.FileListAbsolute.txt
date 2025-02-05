@@ -152,3 +152,4 @@ C:\Users\user\RiderProjects\Pitpmlab4\Pitpmlab4\obj\Debug\net8.0-windows\Registe
 C:\Users\user\RiderProjects\Pitpmlab4\Pitpmlab4\obj\Debug\net8.0-windows\UserWindow.baml
 C:\Users\user\RiderProjects\Pitpmlab4\Pitpmlab4\obj\Debug\net8.0-windows\ProductManipulation.g.cs
 C:\Users\user\RiderProjects\Pitpmlab4\Pitpmlab4\obj\Debug\net8.0-windows\ProductManipulation.baml
+C:\Users\user\RiderProjects\Pitpmlab4\Pitpmlab4\obj\Debug\net8.0-windows\Pitpmlab4.sourcelink.json
