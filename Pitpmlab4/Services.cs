@@ -19,7 +19,7 @@ public class Services
         return user;
     }
 
-    public void Register(string Login, string Password)
+    public long Register(string Login, string Password)
     {
         var user = new User();
         
@@ -28,8 +28,22 @@ public class Services
         user.UserRole = 1;
         
         if(user != null && !_context.Users.Any(u => u.Login == Login))
-        _context.Users.Add(user);
-        _context.SaveChanges();
+        {
+            try
+            {
+                _context.Users.Add(user);
+                _context.SaveChanges();
+                return user.Id;
+            }
+            catch
+            {
+                return 0;
+            }
+            
+        }
+        else
+            return 0;
+
     }
 
     public bool IsAdmin(string Login)
@@ -41,34 +55,38 @@ public class Services
             return false;
     }
 
-    public void AddNewProduct(Product product)
+    public long AddNewProduct(Product product)
     {
         if (product != null)
         {
             _context.Products.Add(product);
                     _context.SaveChanges();
+                    return product.Id;
         }
         else
         {
             MessageBox.Show("Product not found", "Error",MessageBoxButton.OK,MessageBoxImage.Error);
+            return 0;
         }
         
     }
 
-    public void EditProduct(Product product, string Name, int Cost, string ImagePath)
+    public long EditProduct(Product product, string Name, int? Cost, string ImagePath)
     {
         product.Name = Name;
         product.Cost = Cost;
         product.ImagePath = ImagePath;
-        
-        _context.Products.Update(product);
-        _context.SaveChanges();
-    }
+        try
+        {
+            _context.Products.Update(product);
+            _context.SaveChanges();
+        }
+        catch
+        {
+            return 0;
+        }
 
-    public void DeleteProduct(List<Product> product)
-    {
-        _context.Products.RemoveRange(product);
-        _context.SaveChanges();
+        return product.Id;
     }
 
     public List<Product> GetProducts()
@@ -76,4 +94,21 @@ public class Services
         return _context.Products.ToList();
     }
 
+    public Product? GetProductById(long id)
+    {
+        return _context.Products.FirstOrDefault(p => p.Id == id);
+    }
+
+    public long DeleteProduct(Product product)
+    {
+        if (!_context.Products.Any(p => p.Id == product.Id))
+        {
+            return 0;
+        }
+        _context.Products.Remove(product);
+        _context.SaveChanges();
+        return product.Id;
+    }
+    
+    
 }

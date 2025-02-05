@@ -21,7 +21,7 @@ public partial class AdminWindow : Window
 
     private void B_Delete_OnClick(object sender, RoutedEventArgs e)
     {
-        var ProductRemoving = ProductList.SelectedItems.Cast<Product>().ToList();
+        var ProductRemoving = ProductList.SelectedItem as Product;
         if (MessageBox.Show($"Accept deletion?", "Delete", MessageBoxButton.YesNo, MessageBoxImage.Question) !=
             MessageBoxResult.Yes) return;
         _service.DeleteProduct(ProductRemoving);

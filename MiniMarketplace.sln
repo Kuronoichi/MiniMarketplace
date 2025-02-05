@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pitpmlab4", "Pitpmlab4\Pitpmlab4.csproj", "{B1C6B111-F6F5-460D-BF10-CF8A1BC428AF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestsForMarketplace", "TestsForMarketplace\TestsForMarketplace.csproj", "{BAAE70E9-4E06-49AE-AC05-2B0FB6EA86C9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{B1C6B111-F6F5-460D-BF10-CF8A1BC428AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1C6B111-F6F5-460D-BF10-CF8A1BC428AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1C6B111-F6F5-460D-BF10-CF8A1BC428AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAAE70E9-4E06-49AE-AC05-2B0FB6EA86C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAAE70E9-4E06-49AE-AC05-2B0FB6EA86C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAAE70E9-4E06-49AE-AC05-2B0FB6EA86C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAAE70E9-4E06-49AE-AC05-2B0FB6EA86C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
