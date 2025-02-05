@@ -1,0 +1,45 @@
+﻿<Window x:Class="Pitpmlab4.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pitpmlab4"
+        mc:Ignorable="d"
+        Title="Login" Height="450" Width="800">
+    <Grid>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontSize="30" Text="МАРКЕТПЛЕЙС" />
+        
+        <TextBlock Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" Text="Логин" />
+        
+        <TextBox x:Name="tb_login" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Height="30" />
+        
+        <TextBlock Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" Text="Пароль" />
+        
+        <PasswordBox x:Name="tb_Password" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Height="30" />
+        
+        <Button x:Name="b_Login" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Height="30" FontSize="15" Content="Войти" Click="B_Login_OnClick"/>
+        
+        <Button x:Name="b_Registration" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Height="30" FontSize="15" Content="Регистрация" Click="B_Registration_OnClick"/>
+        
+        </Grid>
+</Window>
