@@ -14,7 +14,7 @@ public partial class AdminWindow : Window
         ProductList.ItemsSource = _service.GetProducts();
     }
 
-    public void View()
+    private void View()
     {
         ProductList.ItemsSource = _service.GetProducts();
     }
@@ -31,16 +31,20 @@ public partial class AdminWindow : Window
 
     private void B_Edit_OnClick(object sender, RoutedEventArgs e)
     {
-        var productEditing = ProductList.SelectedItem;
-        var pm = new ProductManipulation(productEditing as Product);
-        pm.Show();
-        this.Close();
+        Product productEditing = (Product)ProductList.SelectedItem;
+        new ProductManipulation(productEditing).ShowDialog();
+        View();
     }
 
     private void B_AddProduct_OnClick(object sender, RoutedEventArgs e)
     {
-        var pm = new ProductManipulation();
-        pm.Show();
+        new ProductManipulation().ShowDialog();
+        View();
+    }
+
+    private void B_Exit_OnClick(object sender, RoutedEventArgs e)
+    {
+        new LoginWindow().Show();
         Close();
     }
 }

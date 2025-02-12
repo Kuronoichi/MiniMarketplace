@@ -6,12 +6,7 @@ namespace Pitpmlab4;
 
 public class Services
 {
-    private readonly SsmsContext _context;
-
-    public Services()
-    {
-        _context = new SsmsContext();
-    }
+    private readonly SsmsContext _context = new();
 
     public User? Login(string Login, string Password)
     {
@@ -65,14 +60,14 @@ public class Services
         }
         else
         {
-            MessageBox.Show("Product not found", "Error",MessageBoxButton.OK,MessageBoxImage.Error);
             return 0;
         }
         
     }
 
-    public long EditProduct(Product product, string Name, int? Cost, string ImagePath)
+    public long EditProduct(long Id, string Name, int? Cost, string ImagePath)
     {
+        var product = _context.Products.Find(Id);
         product.Name = Name;
         product.Cost = Cost;
         product.ImagePath = ImagePath;
@@ -82,10 +77,9 @@ public class Services
             _context.SaveChanges();
         }
         catch
-        {
+        {                
             return 0;
         }
-
         return product.Id;
     }
 
@@ -108,6 +102,11 @@ public class Services
         _context.Products.Remove(product);
         _context.SaveChanges();
         return product.Id;
+    }
+
+    public User? GetUserByLogin(string login)
+    {
+        return _context.Users.FirstOrDefault(u => u.Login == login);
     }
     
     

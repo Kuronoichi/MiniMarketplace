@@ -28,7 +28,7 @@ public partial class LoginWindow : Window
     {
         var user = _services.Login(tb_login.Text, tb_Password.Password);
         if (user == null)
-            MessageBox.Show("Wrong username or password", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            MessageBox.Show("Failed to log in", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
         else if (_services.IsAdmin(user.Login))
         {
             MessageBox.Show("You are logged in", "Success", MessageBoxButton.OK, MessageBoxImage.Information);

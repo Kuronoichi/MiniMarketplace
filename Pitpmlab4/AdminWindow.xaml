@@ -51,5 +51,7 @@
         </DataGrid>
         
         <Button x:Name="b_AddProduct" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" Content="Add new product" Click="B_AddProduct_OnClick"/>
+        
+        <Button x:Name="b_Exit" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2" Content="Exit" Click="B_Exit_OnClick" Height="20"/>
     </Grid>
 </Window>

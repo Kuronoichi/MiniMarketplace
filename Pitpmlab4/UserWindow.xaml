@@ -5,8 +5,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:Pitpmlab4"
         mc:Ignorable="d"
-        Title="UserWindow" Height="450" Width="800" IsVisibleChanged="UserWindow_OnIsVisibleChanged" Closed="UserWindow_OnClosed">
+        Title="UserWindow" Height="450" Width="800" IsVisibleChanged="UserWindow_OnIsVisibleChanged">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
         <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
             <ItemsControl x:Name="ProductCard">
                 <ItemsControl.ItemTemplate>
@@ -36,5 +40,6 @@
 
             </ItemsControl>
         </ScrollViewer>
+        <Button Grid.Row="1" Width="200" Content="Назад" Click="ButtonBase_OnClick"/>
     </Grid>
 </Window>

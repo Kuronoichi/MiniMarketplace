@@ -19,6 +19,13 @@ public partial class RegisterWindow : Window
 
     private void B_Registration_OnClick(object sender, RoutedEventArgs e)
     {
+        if (_service.GetUserByLogin(tb_login.Text) != null || tb_login.Text == "" || tb_Password.Password == "")
+        {
+            MessageBox.Show("Error", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            tb_login.Clear();
+            tb_Password.Clear();
+            return;
+        }
         _service.Register(tb_login.Text, tb_Password.Password);
         MessageBox.Show("Registration successful", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
         new LoginWindow().Show();

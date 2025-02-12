@@ -58,7 +58,7 @@ public class Tests
             Assert.Fail();
         }
 
-        var updid = service.EditProduct(productForUpdate, name, productForUpdate.Cost, productForUpdate.ImagePath);
+        var updid = service.EditProduct(productForUpdate.Id, name, productForUpdate.Cost, productForUpdate.ImagePath);
         if (updid == 0)
         {
             Assert.Fail();
